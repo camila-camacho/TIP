@@ -1,8 +1,11 @@
 
-from app import app 
+from app import app ,dash
 
 from flask import render_template
 
+# dash imports
+
+dash.create_dash_application(app)
 
 @app.route("/")
 def home():
@@ -28,6 +31,13 @@ def closed():
 def index():
     return render_template("public/index.html")
 
-@app.route("/about")
-def about():
-    return "<h1 style='color:red'>About!!!!'</h1>"
+
+
+
+
+
+
+
+
+
+

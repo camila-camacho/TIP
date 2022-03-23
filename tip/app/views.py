@@ -16,6 +16,14 @@ def login():
 def raised():
     return render_template("public/raised.html")
 
+@app.route("/backlog")
+def backlog():
+    return render_template("public/backlog.html")
+
+@app.route("/closed")
+def closed():
+    return render_template("public/closed.html")
+
 @app.route("/admin/dashboard")
 def index():
     return render_template("public/index.html")

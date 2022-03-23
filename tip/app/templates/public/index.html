@@ -3,7 +3,32 @@
 {% block title %}Home{% endblock %}
 
 {% block main %}
-<link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
 
+<div class="card-group">
+  <div class="card">
+    <img src="{{ url_for('static', filename='img/airplane.jpeg') }}" class="card-img-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Raised</h5>
+      <p class="card-text"> Go to see the Raised dashboard</p>
+      <a href="/raised">Go</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{{ url_for('static', filename='img/seats.jpeg') }}" class="card-img-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Closed</h5>
+      <p class="card-text">Go to see the Closed dashboard</p>
+      <a href="/closed">Go</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{{ url_for('static', filename='img/plaine.jpeg') }}" class="card-img-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Backlog</h5>
+      <p class="card-text"> Go to see the Backlog dashboard </p>
+      <a href="/backlog">Go</a>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

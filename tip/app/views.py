@@ -3,22 +3,7 @@ from app import app
 
 from flask import render_template
 
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField
-from wtforms.validators import Lenght, Email 
 
-class LoginForm(FlaskForm):
-    email = StringField("email", validators=[Email()])
-    password = PasswordField()("password", validators = [Lenght(min=5)])
-
-class SignUp(FlaskForm):
-    user = StringField("user")
-    email = StringField("email", validators=[Email()])
-    password = PasswordField()("password", validators = [Lenght(min=5)])
-
-    
-    
-    
 @app.route("/")
 def home():
     return render_template("public/home.html")

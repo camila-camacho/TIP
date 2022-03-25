@@ -3,8 +3,8 @@ from app import app ,dash
 
 from flask import render_template
 
-# dash imports
 
+# dash imports
 dash.create_dash_application(app)
 
 @app.route("/")

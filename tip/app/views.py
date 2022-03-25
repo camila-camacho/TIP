@@ -3,7 +3,9 @@ from app import app ,dash
 
 from flask import render_template
 
+from flask import request, session, redirect, url_for
 
+app.config['SECRET_KEY']='JSANDCNDJCNDJCDSJCSD'
 # dash imports
 dash.create_dash_application(app)
 
@@ -11,9 +13,22 @@ dash.create_dash_application(app)
 def home():
     return render_template("public/home.html")
 
-@app.route("/login")
+@app.route("/login", methods=[ "GET","POST"])
 def login():
-    return render_template("public/templates/login.html")
+    if request.method == "GET":
+        return render_template("public/templates/login.html")
+    else:
+        username=request.form["username"]
+        password=request.form["password"]
+    
+        if username == "camila" and password =="camila":
+            session["username"] = username
+            session["password"] = password
+            return redirect(url_for("index"))
+        else:
+            return render_template("public/templates/login.html")
+            
+
 
 @app.route("/raised")
 def raised():

@@ -5,7 +5,7 @@ ENV HOST=0.0.0.0
 ENV PYTHONUNBUFFERED True
 EXPOSE 80
 
-WORKDIR $APP_HOME
+WORKDIR /app
 ADD . /app
 COPY requirements.txt ./
 
